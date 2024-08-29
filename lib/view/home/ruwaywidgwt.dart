@@ -25,7 +25,7 @@ class FashionItem extends StatelessWidget {
         children: [
           ListTile(
             leading: CircleAvatar(
-              backgroundImage: AssetImage(profilePic),  // Profile picture
+              backgroundImage: AssetImage(profilePic),  
             ),
             title: Text(username),
             trailing: Icon(Icons.more_vert),

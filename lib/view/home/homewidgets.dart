@@ -136,9 +136,9 @@ class WidgetHome {
                     Stack(
                       children: [
                         CircleAvatar(
-                          radius: 20, // Adjust size as needed
+                          radius: 20, 
                           backgroundImage: AssetImage(
-                              'asset/person.jpeg'), // Replace with your asset path
+                              'asset/person.jpeg'), 
                         ),
                         Positioned(
                           bottom: 0,
@@ -147,12 +147,12 @@ class WidgetHome {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: Colors
-                                  .blue, // Background color for the tick icon (optional)
+                                  .blue,
                             ),
                             child: Icon(
                               Icons.check_circle,
                               color: Colors.white,
-                              size: 16, // Adjust size as needed
+                              size: 16, 
                             ),
                           ),
                         ),

@@ -84,15 +84,15 @@ class _SignUpState extends State<SignUp> {
               SizedBox(height: 20,),
                       
                      SizedBox(height: 20),
-            // Already have an account? Text
+          
              SizedBox(height: 20),
-            // Sign Up Button
+           
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: ElevatedButton(
                 onPressed: () {
           
-                   Navigator.push(context,MaterialPageRoute(builder: (context) =>Packages(indexNum: 0), // Display the current page
+                   Navigator.push(context,MaterialPageRoute(builder: (context) =>Packages(indexNum: 0), 
 ));
                 },
                 style: ElevatedButton.styleFrom(
@@ -118,7 +118,7 @@ class _SignUpState extends State<SignUp> {
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             SizedBox(height: 20),
-            // Continue with Google Button
+          
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: OutlinedButton.icon(
@@ -148,7 +148,7 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             SizedBox(height: 10),
-            // Login Button
+           
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: ElevatedButton(

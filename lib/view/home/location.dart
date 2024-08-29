@@ -20,14 +20,14 @@ class __LocationPageState extends State<LocationPage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            // Handle back button press
+            
           },
         ),
         actions: [
           IconButton(
             icon: Icon(Icons.more_vert, color: Colors.black),
             onPressed: () {
-              // Handle more options press
+              
             },
           ),
         ],
@@ -42,7 +42,7 @@ class __LocationPageState extends State<LocationPage> {
                 child: ImageFiltered(
                   imageFilter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
                   child: Image.asset(
-                    'asset/h1.png', // Add your image path
+                    'asset/h1.png', 
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -79,7 +79,7 @@ class __LocationPageState extends State<LocationPage> {
           Expanded(
             child: Container(
               color: Colors.grey[200],
-              child: Image.asset('asset/map.jpeg'), // Replace with your map image
+              child: Image.asset('asset/map.jpeg'), 
             ),
           ),
         ],

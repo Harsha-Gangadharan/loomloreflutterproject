@@ -20,7 +20,7 @@ class _RunwayPageState extends State<RunwayPage> {
           onPressed: () {},
         ),
         title: Image.asset(
-          'asset/fashion.png',  // Replace with your banner image
+          'asset/fashion.png',  
           height: 710,
           
         ),
@@ -30,18 +30,18 @@ class _RunwayPageState extends State<RunwayPage> {
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,  // Number of columns
+            crossAxisCount: 2,  
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
-            childAspectRatio: 0.6,  // Adjust this value to control the height of the grid items
+            childAspectRatio: 0.6,  
           ),
-          itemCount: 4,  // Replace with the actual number of items
+          itemCount: 4,  
           itemBuilder: (context, index) {
             return FashionItem(
-              imageUrl: 'asset/p1.jpeg',  // Replace with your image assets
-              username: ['Harsha', 'Vismaya', 'Thejas', 'Chethan'][index],  // Replace with your usernames
-              likes: ['41k', '40k', '39k', '38k'][index],  // Replace with actual likes count
-              profilePic: 'asset/men.jpeg', image: 'asset/fashion.png',  // Replace with profile picture assets
+              imageUrl: 'asset/p1.jpeg', 
+              username: ['Harsha', 'Vismaya', 'Thejas', 'Chethan'][index],  
+              likes: ['41k', '40k', '39k', '38k'][index], 
+              profilePic: 'asset/men.jpeg', image: 'asset/fashion.png',
             );
           },
         ),
