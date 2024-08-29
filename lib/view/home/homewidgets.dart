@@ -1,28 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lore/view/home/chat.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WidgetHome {
-  AppBar buildAppBar() {
-    return AppBar(
-      elevation: 0,
-      backgroundColor: Colors.white,
-      title: Row(
-        children: [
-          Text(
-            "Loom Lore",
-            style: GoogleFonts.berkshireSwash(
-                color: Color(0xff410502), fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          Spacer(),
-          Icon(Icons.telegram, color: Colors.black),
-          SizedBox(
-            width: 10,
-          ),
-          CircleAvatar(backgroundImage: AssetImage("asset/profile.jpg")),
-        ],
-      ),
-    );
-  }
+  AppBar buildAppBar(BuildContext context) {
+  return AppBar(
+    elevation: 0,
+    backgroundColor: Colors.white,
+    title: Row(
+      children: [
+        Text(
+          "Loom Lore",
+          style: GoogleFonts.berkshireSwash(
+              color: Color(0xff410502), fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        Spacer(),
+        IconButton(
+          icon: Icon(Icons.telegram, color: Colors.black),
+          onPressed: () {
+            // Navigate to the desired screen when the icon is clicked
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ChatPage()), //hatPage Replace 'TelegramScreen' with your target screen
+            );
+          },
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        CircleAvatar(backgroundImage: AssetImage("asset/profile.jpg")),
+      ],
+    ),
+  );
+}
+
 
   Widget buildGreeting() {
     return Column(
@@ -56,7 +67,7 @@ class WidgetHome {
     final categories = ["All Items", "Women", "Men", "Colourwheel"];
     return SingleChildScrollView(
       scrollDirection:
-          Axis.horizontal, // Set the scroll direction to horizontal
+          Axis.horizontal, 
       child: Row(
         children: categories
             .map((category) => Padding(

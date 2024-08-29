@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lore/view/home/creation.dart';
 
 import 'package:flutter_lore/view/home/homewidgets.dart';
+import 'package:flutter_lore/view/home/notificationpage.dart';
+import 'package:flutter_lore/view/home/wishlist.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,8 +17,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: a.buildAppBar(), // Passing context for opening drawer
-      drawer: buildDrawer(), // Drawer should be a direct child of Scaffold
+      appBar: a.buildAppBar(context), 
+      drawer: buildDrawer(), 
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -39,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Using a Container to control the height of DrawerHeader
+         
           Container(
             color: Colors.white,
             padding: EdgeInsets.symmetric(vertical: 20),
@@ -68,28 +71,34 @@ class _HomePageState extends State<HomePage> {
             leading: Icon(Icons.notifications),
             title: Text('Notification'),
             onTap: () {
-              // Handle Notification tap
+             
+                   Navigator.push(context,MaterialPageRoute(builder: (context) =>NotificationPage(), 
+));
             },
           ),
           ListTile(
             leading: Icon(Icons.star),
             title: Text('My Creation'),
             onTap: () {
-              // Handle My Creation tap
+             
+                   Navigator.push(context,MaterialPageRoute(builder: (context) =>MyCreationPage(), 
+));
             },
           ),
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text('Wishlist'),
             onTap: () {
-              // Handle Wishlist tap
+              
+                   Navigator.push(context,MaterialPageRoute(builder: (context) =>WishlistPage(), 
+));
             },
           ),
           ListTile(
             leading: Icon(Icons.chat),
             title: Text('Complaints'),
             onTap: () {
-              // Handle Complaints tap
+             
             },
           ),
           SizedBox(height: 50),
@@ -104,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               onPressed: () {
-                // Handle Logout tap
+                
               },
               child: Text('Logout'),
             ),
