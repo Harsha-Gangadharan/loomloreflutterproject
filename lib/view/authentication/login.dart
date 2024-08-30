@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lore/view/home/bottamnavi.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_lore/view/authentication/widget.dart';
+import 'package:flutter_lore/view/authentication/validation.dart'; // Import the validation
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,7 +12,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _formkey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController(); 
+  final _passwordController = TextEditingController(); 
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   height: MediaQuery.of(context).size.height * 0.4,
                   decoration: const BoxDecoration(
-                    color:  Color(0xffCC8381),
+                    color: Color(0xffCC8381),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(50),
                       bottomRight: Radius.circular(50),
@@ -35,10 +39,11 @@ class _LoginPageState extends State<LoginPage> {
                   top: 130,
                   child: Text(
                     'Welcome\nBack',
-                    style:   GoogleFonts.poppins(
-                            fontSize: 33,
-                            fontWeight: FontWeight.bold,  color: Colors.white,
-                          ),
+                    style: GoogleFonts.poppins(
+                      fontSize: 33,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -47,20 +52,31 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Form(
-                key: _formkey,
+                key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    const UserData(
-                      hintext: "Email",
-                      icon: Icon(Icons.email),
-                      fillColor: Colors.white,
+                    TextFormField(
+                      controller: _emailController,
+                      decoration: InputDecoration(
+                        hintText: 'Email',
+                        prefixIcon: Icon(Icons.email),
+                        filled: true,
+                        fillColor: Colors.white,
+                      ),
+                      validator: Validator.validateEmail,
                     ),
                     SizedBox(height: 20),
-                    const UserData(
-                      hintext: "Password",
-                      icon: Icon(Icons.lock),
-                      fillColor: Colors.white,
+                    TextFormField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText: 'Password',
+                        prefixIcon: Icon(Icons.lock),
+                        filled: true,
+                        fillColor: Colors.white,
+                      ),
+                      validator: Validator.validatePassword,
                     ),
                     SizedBox(height: 20),
                     TextButton(
@@ -74,7 +90,14 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                          Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Packages(indexNum: 0)),
+      );
+                          }
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xffCC8381),
                           minimumSize: Size(double.infinity, 50),
@@ -108,6 +131,31 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         label: Text(
                           "Continue with Google",
+                          style: TextStyle(
+                            color: Color(0xffCC8381),
+                            fontSize: 18,
+                          ),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          minimumSize: Size(double.infinity, 50),
+                          side: BorderSide(color: Color(0xffCC8381)),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: OutlinedButton.icon(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.phone,
+                          color: Color(0xffCC8381),
+                        ),
+                        label: Text(
+                          "Continue with Phone Number",
                           style: TextStyle(
                             color: Color(0xffCC8381),
                             fontSize: 18,

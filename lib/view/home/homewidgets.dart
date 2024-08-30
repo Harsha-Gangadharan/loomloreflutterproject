@@ -18,10 +18,10 @@ class WidgetHome {
         IconButton(
           icon: Icon(Icons.telegram, color: Colors.black),
           onPressed: () {
-            // Navigate to the desired screen when the icon is clicked
+          
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ChatPage()), //hatPage Replace 'TelegramScreen' with your target screen
+              MaterialPageRoute(builder: (context) => ChatPage()), 
             );
           },
         ),
@@ -125,7 +125,7 @@ class WidgetHome {
             child: ClipRRect(
               borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               child: Image.asset(
-                "asset/profile.jpg",
+                "asset/three.jpeg",
                 fit: BoxFit.cover,
                 width: double.infinity,
               ),

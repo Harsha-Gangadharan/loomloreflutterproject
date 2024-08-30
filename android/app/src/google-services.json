@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "824111734552",
+    "project_id": "loomlore-c61db",
+    "storage_bucket": "loomlore-c61db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824111734552:android:9d5a2fd1f5fc2df800486d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_lore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyDFi4oG8f2RO5Bfv_WoeUUhZOxgSdt80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
